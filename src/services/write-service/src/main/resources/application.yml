@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: shortener
+server:
+  port: 8081
