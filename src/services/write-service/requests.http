@@ -1,0 +1,16 @@
+### create (saves the returned code into {{code}})
+POST http://localhost:8081/api/links
+Content-Type: application/json
+
+{"url": "https://github.com/nazbez"}
+
+> {% client.global.set("code", response.body.code); %}
+
+### get
+GET http://localhost:8081/api/links/{{code}}
+
+### get missing → 404
+GET http://localhost:8081/api/links/nope123
+
+### delete
+DELETE http://localhost:8081/api/links/{{code}}
